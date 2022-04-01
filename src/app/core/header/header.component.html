@@ -1,0 +1,57 @@
+<nav class="w-screen overflow-hidden shadow-2xl">
+    <div class="px-10 h-16 flex justify-between lg:justify-evenly items-center">
+        <!--Logo-->
+        <div class="flex justify-center items-center bg-white w-[44px] h-[44px] rounded-3xl hover:text-white hover:bg-slate-900 ring-2 hover:ring-gray-100">
+            <p class="select-none text-2xl font-bold">V</p>
+        </div>
+        
+        <!--Navigation Elements Web-->
+        <div class="text-white hidden sm:flex">
+            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">About</p>
+            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">Resume</p>
+            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">Contact</p>
+        </div>
+
+        <div class="text-white sm:hidden">
+            <div (click)="toggleSideBar()" class="px-5 h-16 flex items-center hover:bg-slate-900">
+                <p *ngIf="!sideBar"><svg class="gg-backspace"></svg>
+                </p>
+                <div *ngIf="sideBar" class="hover:bg-slate-900"><svg class="gg-backspace"></svg>
+                    <div class="absolute top-16 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
+                        <div class="py-1">
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">About</a>
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Resume</a>
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <!--Navigation Elements Mobile-->
+        <!--
+        <div class="text-white sm:hidden">
+            <div (click)="toggleSideBar()" class="px-5 h-16 flex items-center hover:bg-slate-900">
+                <p *ngIf="!sideBar"><svg class="gg-backspace"></svg>
+                </p>
+                <div *ngIf="sideBar" class="hover:bg-slate-900"><svg class="gg-backspace"></svg>
+                    <div class="absolute top-16 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
+                        <div class="py-1">
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">About</a>
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Resume</a>
+                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+        </div>
+        -->
+
+
+        
+
+    </div>
+</nav>
