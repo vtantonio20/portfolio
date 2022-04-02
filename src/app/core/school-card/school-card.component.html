@@ -1,0 +1,27 @@
+
+<div class="xl:w-[600px] xl:h-[600px] xl:p-10 
+            lg:w-[450px] lg:h-[450px] lg:p-10  
+            w-[337.5px] h-[337.5px] p-5  
+            rounded-3xl bg-mono-charcoal text-white 
+            transition-all duration-500 hover:-translate-y-2 hover:bg-slate-800
+            flex  justify-center ">
+    <div *ngIf="school">
+        <div class="divide-y-2">
+            <h1 class="py-2 xl:text-5xl lg:text-4xl text-3xl">{{school.name}}<br>  {{school.location}}</h1>
+            <div>
+                <h3 class="xl:text-3xl lg:text-xl text-lg py-2">{{school.degree}} in {{school.major}}</h3>
+                <li class="font-light xl:text-xl ">Cumulative GPA: {{school.gpa}}</li>
+                <li *ngIf="graduated" class="xl:text-xl font-light pb-2">Graduation Date: {{school.graduationDate}} </li>
+                <li *ngIf="!graduated" class="xl:text-xl font-light pb-2">Expected Graduation Date: {{school.graduationDate}} </li>
+            </div>
+        </div>
+
+
+        <div class="p-5 rounded-md flex justify-center items-center xl:h-1/2 lg:h-1/2 h-1/4 ">
+            <a *ngIf="school"class="bg-white lg:p-5 p-2 rounded-lg" target="_blank" rel="noopener noreferrer" href="{{school.link}}">
+                <img *ngIf="school.img==='assets/gcsc.png'" class=" xl:w-64 lg:w-40 w-24  transition-all duration-1000"  src={{school.img}}>
+                <img *ngIf="school.img==='assets/uf.png'" class="2xl:h-24 xl:h-20 lg:h-16  h-10 transition-all duration-1000 "  src={{school.img}}>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,160 @@
+
+<div class="flex flex-col w-screen h-screen font-body">
+    <app-header class="sticky top-0 z-50 " (clickEvent)="navigation($event)" ></app-header>
+
+    <style>
+        .spacer {
+            aspect-ratio: 1200/300;
+            width: 100%;
+            background-repeat:  no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .layer1{
+        background-image: url('assets/layered-waves-haikei.svg');
+        }
+        .layer2{
+        background-image: url('assets/stacked-peaks-haikei.svg');
+        }
+        .layer3{
+        background-image: url('assets/stacked-steps-haikei.svg');
+        }
+        .layer4{
+        background-image: url('assets/wave-haikei.svg');
+        }
+    </style>
+    
+    <div class="overflow-x-hidden ">
+        <section class="bg-mono-darker">
+            <!--About Section-->
+            <div #about id="about" class="flex justify-center mx-5">
+                <div class="flex flex-col justify-center 
+                            divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-700 ">
+
+                    <h1 class=" md:text-7xl sm:text-6xl text-5xl text-center text-white
+                                py-20 transition-all duration-1000">About me! </h1>  
+                    <div class="max-w-3xl 
+                                md:px-20 md:py-10 px-5 py-5
+                                rounded-3xl bg-mono-darker text-white
+                                hover:bg-gray-300 hover:text-black lg:hover:scale-125 md:hover:scale-110 sm:scale-105 
+                                transition-all duration-1000">
+                                <div class="flex justify-between items-center">
+                                    <h1 class="md:text-7xl sm:text-6xl text-5xl md:pb-10 pb-5 transition-transform duration-1000 ">
+                                        Hello, my name is Victor Torres!
+                                    </h1>
+                                    <!--Resume icon from https://www.flaticon.com/authors/itim2101-->
+                                    <!--<a href="https://www.flaticon.com/free-icons/curriculum-vitae" title="curriculum vitae icons">Curriculum vitae icons created by itim2101 - Flaticon</a>-->
+                                    <a target="_blank" rel="noopener noreferrer" href="assets/resume.pdf"><img class="cursor-pointer md:h-40 md:w-64 h-28 w-44  "  src="assets/resume.png"></a>
+                                </div>
+
+
+                        <h3 class=" md:text-3xl sm:text-2xl text-xl 
+                                    md:pb-20 pb-10 transition-transform duration-1000">
+                                    I am a third year student interested in software development and am studying Computer Science at the University of Florida.
+                        </h3> 
+                        
+                        <!--about list-->
+                        <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
+                            <li (click)="navigation('education')" class="cursor-pointer px-3 py-2">Education</li>
+                            <li (click)="navigation('Skills')" class="cursor-pointer px-3 py-2">Skills</li>
+                            <li (click)="navigation('Projects')" class="cursor-pointer px-3 py-2">Projects</li>
+                            <li (click)="navigation('Contact')" class="cursor-pointer px-3 py-2 ">Contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Divider-->
+        <div class="spacer layer1"></div>
+
+
+        <!--education-->
+        <section class="bg-mono-dark ">
+            <div #education id="education" class="mx-5 flex justify-center ">
+                <div class="flex flex-col justify-between ">
+                    <h1 class=" md:text-7xl sm:text-6xl text-5xl text-white text-center
+                                pt-10 pb-20 transition-all duration-1000">Education! 
+                    </h1>
+                    <!--Go one per line when small screen-->
+                    <!--University cards-->
+                    <div class="md:flex md:justify-evenly  ">
+                        <app-school-card [school]="uf" [graduated]="false" class="p-6"></app-school-card>
+                        <app-school-card [school]="gcsc" [graduated]="true" class="p-6 "></app-school-card>
+
+                    </div>
+                    <!--Relevant Coursework
+                    <div class=" 
+                                rounded-3xl bg-mono-charcoal text-white 
+                                transition-all duration-500 hover:-translate-y-2 hover:bg-slate-800
+                                flex  justify-center">
+                                <h1 class="py-2 xl:text-5xl lg:text-4xl text-3xl">Relevant Coursework</h1>
+
+                    </div>-->
+                </div>
+            </div>
+        </section>
+
+        <!--Divider-->
+        <div class="spacer layer2"></div>
+
+        <section class="bg-mono-aqua">
+            <div #skills id="skills" class="flex justify-center mx-5">
+                <div class=" h-screen flex flex-col justify-evenly">
+                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
+                        Skills
+                    </h1>
+                    <div class="w-full bg-gray-200 h-1">
+                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Divider-->
+        <div class="spacer layer3"></div>
+        
+        <section class="bg-mono-navy">
+            <div #projects id="projects" class="flex justify-center mx-5">
+                <div class=" h-screen flex flex-col justify-evenly">
+                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
+                        Projects
+                    </h1>
+                    <div class="w-full bg-gray-200 h-1">
+                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Divider-->
+        <div class="spacer layer4"></div>
+        
+        <section class="bg-mono-dark">
+            <div #contact id="contact" class="flex justify-center mx-5">
+                <div class=" h-screen flex flex-col justify-evenly">
+                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
+                        Contact
+                    </h1>
+                    <div class="w-full bg-gray-200 h-1">
+                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</div>
+        <!--
+        <div class="flex items-center justify-center m-10 h-[80%] ">
+            <div class="relative">
+                <div class=" z-[6] relative rounded-xl font-semibold  bg-slate-900 py-10 px-[25px] max-w-xl text-white 
+                            hover:text-black hover:bg-gray-100 md:hover:scale-125 transition-all duration-1000 ring-1 ring-gray-100">
+                    <h1 class=" text-6xl font-normal xl ">Hello, my name is Victor!</h1>
+                    <h3 class="pt-4">I am a student interested in software development and am studying Computer Science at the University of Florida.</h3>
+                </div>    
+            </div>
+        </div>
+            -->
+
