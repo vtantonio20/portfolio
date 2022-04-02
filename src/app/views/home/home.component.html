@@ -1,47 +1,87 @@
-<div class="flex flex-col w-screen  h-screen overflow-x-hidden bg-slate-800 font-body">
+
+<div class="flex flex-col w-screen h-screen font-body">
     <app-header class="sticky top-0 z-50"></app-header>
-    <!--About Section-->
-    <div class=" snap-y" >
-        <div class="snap-start h-[92vh]  flex items-center justify-center ">
-            <div class="relative">
-                <h1 class="md:text-7xl sm:text-6xl text-5xl md:pb-20 pb-10 text-center text-white transition-all duration-1000"> About me! </h1>
-                <div class="
-                            max-w-3xl md:px-20 md:py-10 px-10 py-5 
-                            rounded-xl
-                            bg-slate-900 text-white
-                            hover:bg-gray-300 hover:text-black lg:hover:scale-125 md:hover:scale-110 sm:scale-105 transition-all duration-1000">
-                    <h1 class=" md:text-7xl sm:text-6xl text-5xl 
-                                md:pb-10 pb-5 transition-transform duration-1000 ">
-                                Hello, my name is Victor!
-                    </h1>
-                    <h3 class=" md:text-3xl sm:text-2xl text-xl 
-                                md:pb-20 pb-10 transition-transform duration-1000">
-                                I am a student interested in software development and am studying Computer Science at the University of Florida.
-                    </h3> 
-                    
-                    <!--about list-->
-                    <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
-                        <li class="cursor-pointer px-3 py-2">My Skills</li>
-                        <li class="cursor-pointer px-3 py-2">Coursework</li>
-                        <li class="cursor-pointer px-3 py-2 ">Projects</li>
-                    </ul>
+
+    <style>
+        .spacer {
+            aspect-ratio: 960/300;
+            width: 100%;
+            background-repeat:  no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .layer1{
+        background-image: url('assets/layered-waves-haikei.svg');
+        }
+    </style>
+    <div class="overflow-x-hidden">
+        <section class="bg-mono-darker">
+            <!--About Section-->
+            <div #about id="about" class="flex justify-center mx-5">
+                <div class="h-screen flex flex-col justify-evenly 
+                            divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-300 ">
+
+                    <h1 class=" md:text-7xl sm:text-6xl text-5xl text-center text-white
+                                pt-5 pb-10
+                                transition-all duration-1000">About me! </h1>
+                                
+                    <div (mouseenter)="toggleInCard()" (mouseleave)="toggleInCard()" class="
+                                max-w-3xl md:px-20 md:py-10 px-5 py-5 
+                                rounded-3xl
+                                bg-mono-darker text-white
+                                hover:bg-gray-300 hover:text-black lg:hover:scale-125 md:hover:scale-110 sm:scale-105 
+                                transition-all duration-1000">
+                        <h1 class=" md:text-7xl sm:text-6xl text-5xl 
+                                    md:pb-10 pb-5 transition-transform duration-1000 ">
+                                    Hello, my name is <br>Victor Torres!
+                        </h1>
+                        <h3 class=" md:text-3xl sm:text-2xl text-xl 
+                                    md:pb-20 pb-10 transition-transform duration-1000">
+                                    I am a student interested in software development and am studying Computer Science at the University of Florida.
+                        </h3> 
+                        <!--about list-->
+                        <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
+                            <li (click)="moveToSkills()" class="cursor-pointer px-3 py-2">My Skills</li>
+                            <li (click)="moveToSkills()" class="cursor-pointer px-3 py-2">Education</li>
+                            <li class="cursor-pointer px-3 py-2">Coursework</li>
+                            <li class="cursor-pointer px-3 py-2 ">Projects</li>
+                        </ul>
+                    </div>
+                    <br>
                 </div>
-
             </div>
-        </div>
+        </section>
 
-        <div class="snap-start h-[92vh]">
-            <h1 class="md:text-7xl sm:text-6xl text-5xl md:pb-20 pb-10 text-center text-white transition-all duration-1000"> 
-                My Skills 
-            </h1>
-        </div>
-        <div class="snap-start h-[92vh]">
-            <h1 class="md:text-7xl sm:text-6xl text-5xl md:pb-20 pb-10 text-center text-white transition-all duration-1000"> 
-                My Skills 
-            </h1>
-        </div>
-    </div>
     
+        <div class="spacer layer1"></div>
+        <section class="bg-mono-dark ">
+            <div #skills id="skills" class="flex justify-center mx-5">
+                <div class=" h-screen flex flex-col justify-evenly">
+                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
+                        My Skills 
+                    </h1>
+                    <div class="w-full bg-gray-200 h-1">
+                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-mono-aqua">
+            <div #skills id="skills" class="flex justify-center mx-5">
+                <div class=" h-screen flex flex-col justify-evenly">
+                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
+                        Education
+                    </h1>
+                    <div class="w-full bg-gray-200 h-1">
+                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
 
 </div>
         <!--
