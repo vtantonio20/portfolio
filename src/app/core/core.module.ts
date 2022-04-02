@@ -14,7 +14,8 @@ import { SchoolCardComponent } from './school-card/school-card.component';
     CommonModule
   ],
   exports:[
-    HeaderComponent
+    HeaderComponent,
+    SchoolCardComponent
   ]
 })
 export class CoreModule { }

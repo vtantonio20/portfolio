@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { School } from './../models/school';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-school-card',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchoolCardComponent implements OnInit {
 
+  @Input()school:School | undefined;
+  @Input()graduated:Boolean| undefined;
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
