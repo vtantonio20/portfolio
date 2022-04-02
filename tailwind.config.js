@@ -10,7 +10,9 @@ module.exports = {
           light: "#e0f6ff",
           sky: "#e0f6ff",
           white: "#FFFFFF",
-          aqua: "#038373"
+          aqua: "#038373",
+          aqualight: "#00CC8E",
+          navy: "#001829",
         }
       },
       fontFamily: {

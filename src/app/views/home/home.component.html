@@ -4,7 +4,7 @@
 
     <style>
         .spacer {
-            aspect-ratio: 960/300;
+            aspect-ratio: 1200/300;
             width: 100%;
             background-repeat:  no-repeat;
             background-position: center;
@@ -13,24 +13,29 @@
         .layer1{
         background-image: url('assets/layered-waves-haikei.svg');
         }
+        .layer2{
+        background-image: url('assets/stacked-peaks-haikei.svg');
+        }
+        .layer3{
+        background-image: url('assets/stacked-steps-haikei.svg');
+        }
+        .layer4{
+        background-image: url('assets/wave-haikei.svg');
+        }
     </style>
     
     <div class="overflow-x-hidden ">
-        
-
-
         <section class="bg-mono-darker">
             <!--About Section-->
             <div #about id="about" class="flex justify-center mx-5">
-                <div class="h-[60vh] flex flex-col justify-between 
+                <div class="flex flex-col justify-center 
                             divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-700 ">
 
                     <h1 class=" md:text-7xl sm:text-6xl text-5xl text-center text-white
-                                py-20 transition-all duration-1000">About me! </h1>
-                                
-                    <div class="max-w-3xl md:px-20 md:py-10 px-5 py-5 
-                                rounded-3xl
-                                bg-mono-darker text-white
+                                py-20 transition-all duration-1000">About me! </h1>  
+                    <div class="max-w-3xl 
+                                md:px-20 md:py-10 px-5 py-5
+                                rounded-3xl bg-mono-darker text-white
                                 hover:bg-gray-300 hover:text-black lg:hover:scale-125 md:hover:scale-110 sm:scale-105 
                                 transition-all duration-1000">
                                 <div class="flex justify-between items-center">
@@ -58,7 +63,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!--Divider-->
@@ -70,20 +74,29 @@
             <div #education id="education" class="mx-5 flex justify-center ">
                 <div class="flex flex-col justify-between ">
                     <h1 class=" md:text-7xl sm:text-6xl text-5xl text-white text-center
-                                py-20 transition-all duration-1000">Education! 
+                                pt-10 pb-20 transition-all duration-1000">Education! 
                     </h1>
                     <!--Go one per line when small screen-->
+                    <!--University cards-->
                     <div class="md:flex md:justify-evenly  ">
                         <app-school-card [school]="uf" [graduated]="false" class="p-6"></app-school-card>
                         <app-school-card [school]="gcsc" [graduated]="true" class="p-6 "></app-school-card>
+
                     </div>
+                    <!--Relevant Coursework
+                    <div class=" 
+                                rounded-3xl bg-mono-charcoal text-white 
+                                transition-all duration-500 hover:-translate-y-2 hover:bg-slate-800
+                                flex  justify-center">
+                                <h1 class="py-2 xl:text-5xl lg:text-4xl text-3xl">Relevant Coursework</h1>
+
+                    </div>-->
                 </div>
-
-
-
             </div>
         </section>
 
+        <!--Divider-->
+        <div class="spacer layer2"></div>
 
         <section class="bg-mono-aqua">
             <div #skills id="skills" class="flex justify-center mx-5">
@@ -98,7 +111,10 @@
             </div>
         </section>
 
-        <section class="bg-mono-aqua">
+        <!--Divider-->
+        <div class="spacer layer3"></div>
+        
+        <section class="bg-mono-navy">
             <div #projects id="projects" class="flex justify-center mx-5">
                 <div class=" h-screen flex flex-col justify-evenly">
                     <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
@@ -111,8 +127,10 @@
             </div>
         </section>
 
-
-        <section class="bg-mono-charcoal">
+        <!--Divider-->
+        <div class="spacer layer4"></div>
+        
+        <section class="bg-mono-dark">
             <div #contact id="contact" class="flex justify-center mx-5">
                 <div class=" h-screen flex flex-col justify-evenly">
                     <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
 
   sideBar:boolean =  false;
-  navigation:string[] = ['About', 'Education', 'Projects', 'Contact', 'Resume'];
+  navigation:string[] = ['About', 'Education', 'Skills','Projects', 'Contact', 'Resume'];
 
   @Output() clickEvent = new EventEmitter<string>();
 
@@ -22,10 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   clickedNav(value:string){
-    this.clickEvent.emit(value);
-
+    if(value === 'Resume') return window.open('assets/resume.pdf', "_blanks");
+    return this.clickEvent.emit(value);
   }
-
-  
-
 }
