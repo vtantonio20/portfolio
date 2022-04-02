@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
   sideBar:boolean =  false;
+  navigation:string[] = ['About', 'Education', 'Projects', 'Contact', 'Resume'];
+
+  @Output() clickEvent = new EventEmitter<string>();
 
   constructor() { }
   ngOnInit(): void {
@@ -15,6 +19,11 @@ export class HeaderComponent implements OnInit {
 
   toggleSideBar(){
     this.sideBar= !this.sideBar;
+  }
+
+  clickedNav(value:string){
+    this.clickEvent.emit(value);
+
   }
 
   

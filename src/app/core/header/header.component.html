@@ -1,5 +1,5 @@
 <nav class="w-screen shadow-2xl bg-black overflow-x-hidden">
-    <div class="px-10 h-20 flex justify-between xl:justify-evenly items-center">
+    <div class="px-10 h-[80px] flex justify-between xl:justify-evenly items-center">
         <!--Logo-->
         <div class="flex justify-center items-center bg-white w-[60px] h-[60px] rounded-full hover:text-white hover:bg-black ring-2 hover:ring-gray-100">
             <p class="select-none text-4xl font-extralight">VT</p>
@@ -7,10 +7,9 @@
         
         <!--Navigation Elements Web-->
         <div class="text-white hidden sm:flex">
-            <p class="px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">About</p>
-            <p class="px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">Education</p>
-            <p class="px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">Projects</p>
-            <p class="px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">Resume</p>
+            <div *ngFor="let section of navigation">
+                <p (click)="clickedNav(section)" class="cursor-pointer px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">{{section}}</p>
+            </div>
         </div>
 
         <div class="text-white sm:hidden">
@@ -19,12 +18,10 @@
                 <div *ngIf="sideBar">
                     <p class="select-none text-2xl">X</p>
                     <div class="absolute top-20 z-50 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
-                        <div class="py-1">
-                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">About</a>
-                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Resume</a>
-                            <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Contact</a>
+                        <div *ngFor="let section of navigation">
+                            <p (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100">{{section}}</p>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

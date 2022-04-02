@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { CoreModule } from './../core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    RouterModule
   ],
   exports: [HomeComponent]
 })
