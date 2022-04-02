@@ -1,0 +1,20 @@
+<div class="
+    bg-mono-charcoal  rounded-2xl
+    xl:w-[375px] xl:h-[375px]
+    md:w-[337.5px] md:h-[337.5px] 
+    sm:w-[281.25px] sm:h-[281.25px] 
+    sm:px-0 px-5
+    hover:scale-110 transition-all duration-500  ">
+    <!--Only display image on small screen-->
+    <p class=" md:text-3xl sm:text-2xl  sm:py-4 sm:text-white sm:text-center sm:visible invisible ">{{skill?.type}}</p>
+    <div class="max-h-full flex justify-center ">
+        <img class="xl:w-[240px] xl:h-[240px]
+                    lg:w-[220px] lg:h-[220xpx]
+                    md:w-[200px] md:h-[200px] 
+                    w-[155px] h-[155px] sm:rounded-none  rounded-2xl"  src={{skill?.img}}>
+    </div>
+    <p class="md:text-3xl sm:text-3xl sm:py-4 sm:text-white sm:text-center sm:visible invisible ">{{skill?.name}}</p>
+
+</div>
+
+<!--sm:h-3/4 sm:pt-5 w-full p-5 max-h-full-->

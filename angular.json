@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Portfolio-Website": {
+    "Victor-Torres": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,13 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio-website",
+            "outputPath": "dist/victor-torres",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/spy.ico",
               "src/assets"
             ],
             "styles": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Portfolio-Website:build:production"
+              "browserTarget": "Victor-Torres:build:production"
             },
             "development": {
-              "browserTarget": "Portfolio-Website:build:development"
+              "browserTarget": "Victor-Torres:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Portfolio-Website:build"
+            "browserTarget": "Victor-Torres:build"
           }
         },
         "test": {
@@ -90,7 +90,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
+              "src/spy.ico",
               "src/assets"
             ],
             "styles": [
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "Portfolio-Website"
+  "defaultProject": "Victor-Torres"
 }

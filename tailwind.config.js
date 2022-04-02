@@ -2,6 +2,11 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      screen: {
+        'xs': '375px',
+        // => @media (min-width: 375px) { ... }
+
+      },
       colors: {
         mono: {
           charcoal: "#152029",
