@@ -1,23 +1,23 @@
-<nav class="w-screen overflow-hidden shadow-2xl">
-    <div class="px-10 h-16 flex justify-between lg:justify-evenly items-center">
+<nav class="w-screen overflow-hidden shadow-2xl bg-slate-800">
+    <div class="px-10 h-20 flex justify-between xl:justify-evenly items-center">
         <!--Logo-->
-        <div class="flex justify-center items-center bg-white w-[44px] h-[44px] rounded-3xl hover:text-white hover:bg-slate-900 ring-2 hover:ring-gray-100">
-            <p class="select-none text-2xl font-bold">V</p>
+        <div class="flex justify-center items-center bg-white w-[60px] h-[60px] rounded-full hover:text-white hover:bg-slate-900 ring-2 hover:ring-gray-100">
+            <p class="select-none text-4xl font-extralight">VT</p>
         </div>
         
         <!--Navigation Elements Web-->
         <div class="text-white hidden sm:flex">
-            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">About</p>
-            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">Resume</p>
-            <p class="px-5 h-16 flex items-center hover:bg-slate-900 transition-colors">Contact</p>
+            <p class="px-5 h-20 flex items-center hover:bg-slate-900 transition-colors">Home</p>
+            <p class="px-5 h-20 flex items-center hover:bg-slate-900 transition-colors">Projects</p>
+            <p class="px-5 h-20 flex items-center hover:bg-slate-900 transition-colors">Resume</p>
         </div>
 
         <div class="text-white sm:hidden">
-            <div (click)="toggleSideBar()" class="px-5 h-16 flex items-center hover:bg-slate-900">
-                <p *ngIf="!sideBar"><svg class="gg-backspace"></svg>
-                </p>
-                <div *ngIf="sideBar" class="hover:bg-slate-900"><svg class="gg-backspace"></svg>
-                    <div class="absolute top-16 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
+            <div (mouseleave)="toggleSideBar()" (mouseenter)="toggleSideBar()" class="w-[96px]  h-20 flex justify-center items-center hover:bg-slate-900">
+                <p *ngIf="!sideBar" class="select-none text-2xl font-bold">Menu</p>
+                <div *ngIf="sideBar">
+                    <p class="select-none text-2xl">X</p>
+                    <div class="absolute top-20 z-50 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
                         <div class="py-1">
                             <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">About</a>
                             <a href="#" class="text-black block px-4 py-2 text-sm hover:bg-gray-100">Resume</a>
@@ -26,7 +26,6 @@
                       </div>
                 </div>
             </div>
-            
         </div>
 
         
