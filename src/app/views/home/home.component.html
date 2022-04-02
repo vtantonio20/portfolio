@@ -25,8 +25,8 @@
     </style>
     
     <div class="overflow-x-hidden ">
+        <!--About Section-->
         <section class="bg-mono-darker">
-            <!--About Section-->
             <div #about id="about" class="flex justify-center mx-5">
                 <div class="flex flex-col justify-center 
                             divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-700 ">
@@ -46,13 +46,10 @@
                                     <!--<a href="https://www.flaticon.com/free-icons/curriculum-vitae" title="curriculum vitae icons">Curriculum vitae icons created by itim2101 - Flaticon</a>-->
                                     <a target="_blank" rel="noopener noreferrer" href="assets/resume.pdf"><img class="cursor-pointer md:h-40 md:w-64 h-28 w-44  "  src="assets/resume.png"></a>
                                 </div>
-
-
                         <h3 class=" md:text-3xl sm:text-2xl text-xl 
                                     md:pb-20 pb-10 transition-transform duration-1000">
-                                    I am a third year student interested in software development and am studying Computer Science at the University of Florida.
+                                    I am a third year student interested in software development and am studying Computer Science at the University of Florida. Here's a bit about me...
                         </h3> 
-                        
                         <!--about list-->
                         <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
                             <li (click)="navigation('education')" class="cursor-pointer px-3 py-2">Education</li>
@@ -81,56 +78,29 @@
                     <div class="md:flex md:justify-evenly  ">
                         <app-school-card [school]="uf" [graduated]="false" class="px-6 pb-16"></app-school-card>
                         <app-school-card [school]="gcsc" [graduated]="true" class="px-6 pb-16"></app-school-card>
-
                     </div>
-                    <!--Relevant Coursework
-                    <div class=" 
-                                rounded-3xl bg-mono-charcoal text-white 
-                                transition-all duration-500 hover:-translate-y-2 hover:bg-slate-800
-                                flex  justify-center">
-                                <h1 class="py-2 xl:text-5xl lg:text-4xl text-3xl">Relevant Coursework</h1>
-
-                    </div>-->
                 </div>
             </div>
         </section>
-
-
-
-
-
-
-        
-        
-        
-        
         <!--Divider-->
         <div class="spacer layer2"></div>
-
+        <!--Skills section-->
         <section class="bg-mono-aqua">
-            
-            <div #skills id="skills" class="sm:mx-5 mx-1">
-                <!-- <div class=" h-screen flex flex-col justify-evenly">-->
+            <div #skills id="skills" class="sm:mx-5 mx-2">
                 <h1 class=" pb-16 md:text-7xl sm:text-6xl text-5xl text-white text-center transition-all duration-1000 "> Skills</h1>
-
                 <div class="flex justify-center">
                     <div class="max-w-7xl  py-5
-                                grid lg:gap-8 lg:px-8 sm:gap-4 sm:px-4 gap-2 px-2 place-items-center
+                                grid lg:gap-8 lg:px-8 gap-4 px-4  place-items-center
                                 xl:grid-cols-3
                                 grid-cols-2">
                             <app-skill-card *ngFor="let skill of skillsArray"  [skill]="skill"></app-skill-card>
-
-
                     </div>
-
                 </div>
-               
             </div>
         </section>
-
         <!--Divider-->
         <div class="spacer layer3"></div>
-        
+        <!--Projects seciton-->
         <section class="bg-mono-navy">
             <div #projects id="projects" class="flex justify-center mx-5">
                 <div class=" h-screen flex flex-col justify-evenly">
@@ -149,13 +119,9 @@
         
         <section class="bg-mono-dark">
             <div #contact id="contact" class="flex justify-center mx-5">
-                <div class=" h-screen flex flex-col justify-evenly">
-                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
-                        Contact
-                    </h1>
-                    <div class="w-full bg-gray-200 h-1">
-                        <div class="bg-blue-600 h-1" style="width: 45%"></div>
-                    </div>
+                <div class=" h-screen flex flex-col justify-start divide-y-2">
+                    <h1 class=" pb-16 md:text-7xl sm:text-6xl text-5xl text-white text-center transition-all duration-1000 "> Contact</h1>
+
                 </div>
             </div>
         </section>
