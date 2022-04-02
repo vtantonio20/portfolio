@@ -1,8 +1,9 @@
+import { Skill } from './../../core/models/skill';
 import { Component, ElementRef, OnChanges, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
 import { School } from 'src/app/core/models/school';
-
+import { Observable } from 'rxjs/internal/Observable';
+import schools from 'src/assets/static/schools.json';
+import skillsList from 'src/assets/static/skills.json';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,38 +17,18 @@ export class HomeComponent implements OnInit{
   @ViewChild('projects') public projects : ElementRef | undefined;
   @ViewChild('contact') public contact : ElementRef | undefined;
 
-  constructor(private router:Router, private viewportScroller:ViewportScroller) {  }
+  constructor() {  }
+
 
   uf:School|undefined;
   gcsc:School|undefined;
 
+  skillsArray: Skill[]|undefined;
+
   ngOnInit(): void {
-    let gcsc: School = {
-      name: 'Gulf Coast State College',  
-      location: 'Panama City, FL',
-      gpa:'3.7',
-      degree:'Associate of Arts',
-      major: 'Liberal Arts',
-      startDate:'08/2019',
-      graduationDate:'12/2020',
-      img:'assets/gcsc.png',
-      link:'https://www.gulfcoast.edu/'
-
-    }
-    let uf: School = {
-      name: 'University of Florida',  
-      location: 'Gainesville, FL',
-      gpa:'3.6',
-      degree:'Bachelor of Science',
-      major: 'Computer Science',
-      startDate:'01/2021',
-      graduationDate:'05/2023',
-      img:'assets/uf.png',
-      link:'https://www.ufl.edu/'
-
-    }
-    this.gcsc=gcsc;
-    this.uf=uf;
+    this.gcsc=schools.gcsc;
+    this.uf=schools.uf;
+    this.skillsArray= skillsList.skills;
   }
 
   navigation(linkTo:string){
@@ -57,5 +38,9 @@ export class HomeComponent implements OnInit{
     if(linkTo.toLowerCase() === 'projects') this.projects?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start', overflow: 'hidden' });
     if(linkTo.toLowerCase() === 'contact') this.contact?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start', overflow: 'hidden' });
     return;
+  }
+
+  log(s:any){
+    console.log(s)
   }
 }
