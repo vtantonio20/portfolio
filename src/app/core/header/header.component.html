@@ -13,13 +13,13 @@
         </div>
         <!--Navigation Elements Mobile-->
         <div class="text-white sm:hidden">
-            <div (mouseleave)="toggleSideBar()" (mouseenter)="toggleSideBar()" class="w-[96px]  h-20 flex justify-center items-center hover:bg-slate-900">
-                <p  *ngIf="!sideBar" class="select-none text-2xl font-bold">Menu</p>
+            <div (click)="toggleSideBar()">
+                <p   *ngIf="!sideBar" class="select-none text-2xl font-bold w-[96px] h-20 flex justify-center items-center">Menu</p>
                 <div  *ngIf="sideBar">
-                    <p class="select-none text-2xl font-thin">X</p>
+                    <p  class="bg-slate-900 select-none text-2xl font-bold w-[96px] h-20 flex items-center justify-center">X</p>
                     <div class="absolute top-20 z-50 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
                         <div *ngFor="let section of navigation">
-                            <p (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100">{{section}}</p>
+                            <p  (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100">{{section}}</p>
                         </div>
                     </div>
                 </div>
