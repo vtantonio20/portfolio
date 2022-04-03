@@ -15,15 +15,18 @@
         <div class="text-white sm:hidden">
             <div (click)="toggleSideBar()">
                 <p   *ngIf="!sideBar" class="select-none text-2xl font-bold w-[96px] h-20 flex justify-center items-center">Menu</p>
-                <div  *ngIf="sideBar">
-                    <p  class="bg-slate-900 select-none text-2xl font-bold w-[96px] h-20 flex items-center justify-center">X</p>
-                    <div class="absolute top-20 z-50 right-3 w-44 shadow-xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none rounded-b-md">
-                        <div *ngFor="let section of navigation">
-                            <p  (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100">{{section}}</p>
-                        </div>
-                    </div>
-                </div>
+                <p   *ngIf="sideBar" class="select-none text-2xl font-bold w-[96px] h-20 flex justify-center items-center bg-slate-900">X</p>
             </div>
         </div>
     </div>
 </nav>
+
+<div (click)="toggleSideBar()">
+    <div  *ngIf="sideBar">
+        <div class="absolute top-20 z-50 right-1 w-[98vw] shadow-xl bg-white rounded-b-xl divide-y-2">
+            <div *ngFor="let section of navigation">
+                <p  (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100 text-center">{{section}}</p>
+            </div>
+        </div>
+    </div>
+</div>
