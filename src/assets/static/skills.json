@@ -78,6 +78,18 @@
             "name":"Circle CI",
             "img":"https://upload.wikimedia.org/wikipedia/commons/8/82/Circleci-icon-logo.svg",
             "link":""
+        },
+        {
+            "type":"Cloud Technology",
+            "name":"Firebase",
+            "img":"https://firebase.google.com/downloads/brand-guidelines/SVG/logo-knockout.svg",
+            "link":""
+        },
+        {
+            "type":"NoSQL Document Database",
+            "name":"Cloud Firestore",
+            "img":"https://img.icons8.com/color/452/cloud-firestore.png",
+            "link":""
         }
     ]
 
