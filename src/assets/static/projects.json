@@ -1,0 +1,25 @@
+{
+    "projects": [
+        {
+            "name":"InterVids",
+            "description":"Video based eLearning platform",
+            "tech":"Angular, Tailwind, Firebase",
+            "img":"",
+            "link":""           
+        },
+        {
+            "name":"Minesweeper",
+            "description":"",
+            "tech":"C++, SFML",
+            "img":"",
+            "link":""           
+        },
+        {
+            "name":"Space Invader Clone",
+            "description":"",
+            "tech":"Python, Pygame",
+            "img":"",
+            "link":""           
+        }
+    ]
+}

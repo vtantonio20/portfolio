@@ -1,14 +1,14 @@
-<nav class="w-screen shadow-2xl bg-black overflow-x-hidden">
+<nav class=" shadow-2xl bg-black ">
     <div class="px-10 h-[80px] flex justify-between xl:justify-evenly items-center">
         <!--Logo-->
         <div class="flex justify-center items-center bg-white w-[60px] h-[60px] rounded-full hover:text-white hover:bg-black ring-2 hover:ring-gray-100 transition-all duration-200">
-            <p class="select-none text-4xl font-extralight">VT</p>
+            <p class="select-none  text-4xl font-extralight">VT</p>
         </div>
         
         <!--Navigation Elements Web-->
         <div class="text-white hidden sm:flex">
             <div *ngFor="let section of navigation">
-                <p (click)="clickedNav(section)" class="cursor-pointer px-5 h-20 flex items-center hover:bg-white hover:text-black transition-colors duration-300">{{section}}</p>
+                <p (click)="clickedNav(section)" class="cursor-pointer px-5 h-20  flex items-center hover:bg-white hover:text-black transition-colors duration-300">{{section}}</p>
             </div>
         </div>
         <!--Navigation Elements Mobile-->
@@ -23,7 +23,7 @@
 
 <div (click)="toggleSideBar()">
     <div  *ngIf="sideBar">
-        <div class="absolute top-20 z-50 right-1 w-[98vw] shadow-xl bg-white rounded-b-xl divide-y-2">
+        <div class="absolute top-20 z-50 right-[4%] w-[90vw] shadow-xl  bg-white rounded-b-xl divide-y-2">
             <div *ngFor="let section of navigation">
                 <p  (click)="clickedNav(section)" class="cursor-pointer text-black block px-4 py-2 text-sm hover:bg-gray-100 text-center">{{section}}</p>
             </div>

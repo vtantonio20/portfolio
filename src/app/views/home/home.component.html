@@ -1,81 +1,64 @@
 
-<div class="flex flex-col w-screen h-screen font-body">
+
+<style>
+    .spacer {
+        aspect-ratio: 1200/300;
+        width: 100%;
+        background-repeat:  no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .layer1{
+    background-image: url('assets/layered-waves-haikei.svg');
+    }
+    .layer2{
+    background-image: url('assets/stacked-peaks-haikei.svg');
+    }
+    .layer3{
+    background-image: url('assets/stacked-steps-haikei.svg');
+    }
+    .layer4{
+    background-image: url('assets/wave-haikei.svg');
+    }
+</style>
+<div class="flex  flex-col min-h-screen font-body">
     <app-header class="sticky top-0 z-50 " (clickEvent)="navigation($event)" ></app-header>
 
-    <style>
-        .spacer {
-            aspect-ratio: 1200/300;
-            width: 100%;
-            background-repeat:  no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-        .layer1{
-        background-image: url('assets/layered-waves-haikei.svg');
-        }
-        .layer2{
-        background-image: url('assets/stacked-peaks-haikei.svg');
-        }
-        .layer3{
-        background-image: url('assets/stacked-steps-haikei.svg');
-        }
-        .layer4{
-        background-image: url('assets/wave-haikei.svg');
-        }
-    </style>
     
-    <div class="overflow-x-hidden ">
+    <div class="sticky top-0 ">
         <!--About Section-->
-        <section class="bg-mono-darker">
-            <div #about id="about" class="flex justify-center mx-5">
-                <div class="flex flex-col justify-center 
-                            divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-700 ">
-
-                    <h1 class=" md:text-7xl sm:text-6xl text-5xl text-center text-white
-                                py-20 transition-all duration-1000">About me! </h1>  
-                    <div class="max-w-3xl 
-                                md:px-20 md:py-10 px-5 py-5
-                                rounded-3xl bg-mono-darker text-white
-                                sm:hover:bg-gray-300 sm:hover:text-black focus:bg-gray-300
-                                sm:scale-105 lg:hover:scale-125 md:hover:scale-110
-                                transition-all duration-1000">
-                                <div class="flex justify-between items-center">
-                                    <h1 class="md:text-7xl sm:text-6xl text-5xl md:pb-10 pb-5 transition-transform duration-1000 ">
-                                        Hello, my name is Victor Torres!
-                                    </h1>
-                                    <!--Resume icon from https://www.flaticon.com/authors/itim2101-->
-                                    <!--<a href="https://www.flaticon.com/free-icons/curriculum-vitae" title="curriculum vitae icons">Curriculum vitae icons created by itim2101 - Flaticon</a>-->
-                                    <a target="_blank" rel="noopener noreferrer" href="assets/resume.pdf"><img class="cursor-pointer md:h-40 md:w-64 h-28 w-44  "  src="assets/resume.png"></a>
-                                </div>
-                        <h3 class=" md:text-3xl sm:text-2xl text-xl 
-                                    md:pb-20 pb-10 transition-transform duration-1000">
-                                    I am a third year student interested in software development and am studying Computer Science at the University of Florida. Here's a bit about me...
-                        </h3> 
-                        <!--about list-->
-                        <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
-                            <li (click)="navigation('education')" class="cursor-pointer px-3 py-2">Education</li>
-                            <li (click)="navigation('Skills')" class="cursor-pointer px-3 py-2">Skills</li>
-                            <li (click)="navigation('Projects')" class="cursor-pointer px-3 py-2">Projects</li>
-                            <li (click)="navigation('Contact')" class="cursor-pointer px-3 py-2 ">Contact</li>
-                        </ul>
+        <div class="bg-mono-darker text-white">
+            <div  #about id="about" class="sectionMargin grid gap-4 justify-items-center cardShadow">
+                <h1 class="h1Text lg:py-16 md:py-10 py-5">About me!</h1>
+                <div class="aboutCardEffects">
+                    <div class="flex items-center">
+                        <h1 class="h1Text">Hello, my name is Victor Torres!</h1>
+                        <a target="_blank" rel="noopener noreferrer" href="assets/resume.pdf" class=" w-[40%] max-w-md">
+                            <img class="cursor-pointer "  src="assets/resume.png">
+                        </a>
                     </div>
-                </div>
+                    <div class="h3Text md:py-10 py-5">
+                        I am a third year student interested in software development and am studying Computer Science at the University of Florida. Here's a bit about me...
+                    </div>
+
+                    <ul class="flex justify-evenly md:text-2xl sm:text-xl text-lg ">
+                        <li (click)="navigation('education')" class="cursor-pointer px-3 py-2">Education</li>
+                        <li (click)="navigation('Skills')" class="cursor-pointer px-3 py-2">Skills</li>
+                        <li (click)="navigation('Projects')" class="cursor-pointer px-3 py-2">Projects</li>
+                        <li (click)="navigation('Contact')" class="cursor-pointer px-3 py-2 ">Contact</li>
+                    </ul>
+                </div>  
             </div>
-        </section>
 
         <!--Divider-->
         <div class="spacer layer1"></div>
 
 
         <!--education-->
-        <section class="bg-mono-dark ">
+        <section class="bg-mono-dark text-white">
             <div #education id="education" class="mx-5 flex justify-center ">
                 <div class="flex flex-col justify-between ">
-                    <h1 class=" md:text-7xl sm:text-6xl text-5xl text-white text-center
-                                pb-16 transition-all duration-1000">Education
-                    </h1>
-                    <!--Go one per line when small screen-->
-                    <!--University cards-->
+                    <h1 class="h1Text pb-16 text-center">Education</h1>
                     <div class="md:flex md:justify-evenly  ">
                         <app-school-card [school]="uf" [graduated]="false" class="px-6 pb-16"></app-school-card>
                         <app-school-card [school]="gcsc" [graduated]="true" class="px-6 pb-16"></app-school-card>
@@ -86,14 +69,13 @@
         <!--Divider-->
         <div class="spacer layer2"></div>
         <!--Skills section-->
-        <section class="bg-mono-aqua">
+        <section class="bg-mono-aqua text-white">
             <div #skills id="skills" class="sm:mx-5 mx-2">
-                <h1 class=" pb-16 md:text-7xl sm:text-6xl text-5xl text-white text-center transition-all duration-1000 "> Skills</h1>
+                <h1 class="h1Text pb-16 text-center"> Skills</h1>
                 <div class="flex justify-center">
-                    <div class="max-w-7xl  py-5
-                                grid lg:gap-8 lg:px-8 gap-4 px-4  place-items-center
-                                xl:grid-cols-3
-                                grid-cols-2">
+                    <div class="max-w-7xl py-5
+                                grid lg:gap-8 lg:px-8 gap-4 px-4 place-items-center
+                                xl:grid-cols-3 grid-cols-2">
                             <app-skill-card *ngFor="let skill of skillsArray" [skill]="skill"></app-skill-card>
                     </div>
                 </div>
@@ -102,12 +84,10 @@
         <!--Divider-->
         <div class="spacer layer3"></div>
         <!--Projects seciton-->
-        <section class="bg-mono-navy">
+        <section class="bg-mono-navy text-white">
             <div #projects id="projects" class="flex justify-center mx-5">
                 <div class=" h-screen flex flex-col justify-evenly">
-                    <h1 class="md:text-7xl sm:text-6xl text-5xl pt-10 md:pb-20 pb-10  text-white transition-all duration-1000"> 
-                        Projects
-                    </h1>
+                    <h1 class="h1Text pt-10 md:pb-20 pb-10  text-white"> Projects</h1>
                     <div class="w-full bg-gray-200 h-1">
                         <div class="bg-blue-600 h-1" style="width: 45%"></div>
                     </div>
@@ -118,39 +98,29 @@
         <!--Divider-->
         <div class="spacer layer4"></div>
         
-        <section class="bg-mono-dark">
-            <div #contact id="contact" class="flex justify-center mx-5 pb-10">
-                <div class="text-white ">
-                    <h1 class=" pb-10 md:text-7xl sm:text-6xl text-5xl text-center transition-all duration-1000 "> Contact</h1>
+        <section class="bg-mono-dark text-white ">
+            <div #contact id="contact" class="p-10 flex justify-center">
+
+                <div class=" grid md:grid-cols-2  grid-cols-1  md:justify-items-center ">
+                    <h1 class="h1Text text-center pb-10 md:col-span-2"> Contact</h1>
+
+                    <div class="h3Text">
+                        <li class="py-1">Location: Panama City Beach, Florida</li>
+                        <li class="py-1">Phone: 1 (850) 346-5971</li>
+                        <li class="py-1">Email: vt.antonio20@gmail.com</li>
+                    </div>
                     
-                    <div class="sm:flex sm:justify-between lg:text-3xl md:text-2xl sm:text-xl py-1">
-                        <div class="sm:pr-10 xl:pr-20">
-                            <li class="py-1">Location: Panama City Beach, Florida</li>
-                            <li class="py-1">Phone: 1 (850) 346-5971</li>
-                            <li class="py-1">Email: vt.antonio20@gmail.com</li>
-                        </div>
-                        <div class="sm:pl-10 xl:pl-20">
-                            <li class=" py-1 "><a href="https://github.com/vtantonio20" class="text-blue-400">Github</a></li>
-                            <li class=" py-1"><a href="https://www.linkedin.com/in/victor-torres-a57170224/" class="text-blue-400">LinkedIn</a></li>
-                        </div>
+                    <div class="h3Text">
+                        <li class=" py-1 "><a href="https://github.com/vtantonio20" class="text-blue-400">Github</a></li>
+                        <li class=" py-1"><a href="https://www.linkedin.com/in/victor-torres-a57170224/" class="text-blue-400">LinkedIn</a></li>
                     </div>
 
-
                 </div>
-
             </div>
             
-            <!--
-            <div #contact id="contact" class="flex justify-center mx-5 pb-36">
-                <div class="flex flex-col justify-start divide-y-2 w-[80%]">
-                    <h1 class=" pb-10 md:text-7xl sm:text-6xl text-5xl text-white text-center transition-all duration-1000 "> Contact</h1>
-                    <div class="flex justify-end text-white md:text-3xl sm:text-2xl text-xl">
-                        <h2 class="py-2 2xl:ml-52 xl:ml-48 inline"> <img src="assets/icons/mail.png" class="h-8 select-none">  vt.antonio20@gmail.com</h2><br>
-                        <h2 class="py-2 2xl:ml-52 xl:ml-48 inline"> <img src="assets/icons/phoneicon.png" class="h-8 select-none"> 850-346-5971</h2>
-                    </div>
-                </div>
-            </div>
-            -->
         </section>
+
+        <app-footer class="sticky bottom-0 z-50 " ></app-footer>
+
     </div>
 </div>
