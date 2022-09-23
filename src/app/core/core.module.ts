@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SchoolCardComponent } from './school-card/school-card.component';
 import { SkillCardComponent } from './skill-card/skill-card.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -10,7 +11,8 @@ import { SkillCardComponent } from './skill-card/skill-card.component';
   declarations: [
     HeaderComponent,
     SchoolCardComponent,
-    SkillCardComponent
+    SkillCardComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { SkillCardComponent } from './skill-card/skill-card.component';
   exports:[
     HeaderComponent,
     SchoolCardComponent,
-    SkillCardComponent
+    SkillCardComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

@@ -3,3 +3,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .h1Text{
+        @apply md:text-7xl sm:text-6xl text-5xl  
+    }
+    .h3Text{
+        @apply md:text-2xl sm:text-xl text-lg ;
+    }
+    .aboutSection{
+        @apply bg-mono-darker text-white transition-all duration-1000;
+    }
+    .sectionMargin{
+        @apply xl:mx-36 lg:mx-24 md:mx-16 sm:mx-12 mx-4 ;
+    }
+
+    .aboutCardMargin{
+        @apply md:px-20 md:py-10 px-5 py-5 ;
+    }
+
+    .aboutCardEffects{
+        @apply  md:px-20 md:py-10 px-5 py-5
+             hover:bg-gray-300 hover:text-black 
+                max-w-3xl rounded-3xl 
+                sm:scale-105 md:hover:scale-110 lg:hover:scale-125 
+                transition-all duration-1000;
+    }
+    .cardShadow{
+        @apply divide-y-2 divide-y-reverse divide-x-2 divide-x-reverse divide-gray-700;
+    }
+
+}
