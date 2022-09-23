@@ -1,4 +1,3 @@
-My OLD portfolio website created in angular using the tailwind css library.
+MY NEW WEBSITE HERE
 
-Link: https://vtantonio20.github.io/portfolio/
-
+vtantonio20.github.io/myportfolio
